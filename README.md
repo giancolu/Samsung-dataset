@@ -18,8 +18,8 @@ The second script (run_analysis.R) performs the following tasks:
 4. Appropriately labels the data set with descriptive activity names. 
 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
 
+
 ### Script 1 - samdata_analysis_code.R
-======================================
 
 Check if "UCI HAR Dataset" folder exists in working dir or download source from the web
 ```
@@ -38,8 +38,8 @@ cat("I'm running run_analysis.R to prepare a tidy dataset from source data...")
 cat("... samsung_dataset_1.csv (dataset1) and samsung_dataset_2.csv (dataset2) will be created") 
 source("run_analysis.R")
 ```
+
 ### Script 2 - run_analysis.R
-=============================
 
 #### CREATING UCI-Samsung Dataset 1:
 
