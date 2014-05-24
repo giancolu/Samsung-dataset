@@ -4,7 +4,7 @@ This dataset contain the Human Activity Recognition (HAR) database built from th
 
 Preparation of the dataset for the analysis is performed with two R scripts. 
 
-The first (samdata_analysis_code.R) performs thefollowing tasks:
+The first (samdata_analysis_code.R) performs the following tasks:
 
 1) checks for the presence of the source dataset in the working directory; 
 2) downloads and unzips the source file from the UCI Machine Learning Repository website in the working directory if the source dataset doesn't exist;
