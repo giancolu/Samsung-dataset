@@ -83,5 +83,5 @@ The dataset contains 10299 records and the following 50 columns:
 49. fbodygyro.std.y
 50. fbodygyro.std.z
 
-### Dataset 2
+#### Dataset 2
 This dataset derives from "dataset 1" by averaging each variable for each activity and each subject. It contains 180 records and the same column names of the "dataset 1" with the "avg" prefix.
