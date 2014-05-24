@@ -12,16 +12,16 @@ The first (samdata_analysis_code.R) performs thefollowing tasks:
 
 The second script (run_analysis.R) performs the following tasks:
 
-1) Merges the training and the test sets to create one data set.
-2) Extracts only the measurements on the mean and standard deviation for each measurement. 
-3) Uses descriptive activity names to name the activities in the data set
-4) Appropriately labels the data set with descriptive activity names. 
-5) Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
+1. Merges the training and the test sets to create one data set.
+2. Extracts only the measurements on the mean and standard deviation for each measurement. 
+3. Uses descriptive activity names to name the activities in the data set
+4. Appropriately labels the data set with descriptive activity names. 
+5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
 
-Script 1 - samdata_analysis_code.R
-==================================
+### Script 1 - samdata_analysis_code.R
+======================================
 
-Check if "UCI HAR Dataset" folder exist in workin dir or download source from the web
+Check if "UCI HAR Dataset" folder exists in working dir or download source from the web
 ```
 if (!file.exists("./UCI HAR Dataset")) {
 fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip" 
@@ -32,16 +32,16 @@ unzip("./UCI_HAR_Dataset.zip")
 }
 ```
 
-Run analysis on dataset
+Launch run_analysis.R (script 2) to prepare a tidy dataset from source data
 ```
-cat("I'm running the analysis on source dataset...")
+cat("I'm running run_analysis.R to prepare a tidy dataset from source data...")
 cat("... samsung_dataset_1.csv (dataset1) and samsung_dataset_2.csv (dataset2) will be created") 
 source("run_analysis.R")
 ```
-Script 2 - run_analysis.R
-=========================
+### Script 2 - run_analysis.R
+=============================
 
-CREATING UCI-Samsung Dataset 1
+#### CREATING UCI-Samsung Dataset 1:
 
 Crate a dataset of subjects from "subjet_test" and "subject_train" datasets
 ```
@@ -80,7 +80,7 @@ Change as factor subject_id (30 levels)
 ```
 db$subject.id <- as.factor(db$subject.id)
 ```
-Select features that represent only mean and std and create dataset "okdb"
+Select features that represent only mean and std and create dataset "dataset 1"
 ```
 smean <- "mean...[xyz]"
 sstd <- "std...[xyz]"
@@ -96,12 +96,12 @@ Optimize columns name according to R standard
 newcol <- sub("...",".",(names(dataset1)),fixed=T)
 names(dataset1) <- newcol
 ```
-Export "Samsung_dataset_1.csv"
+Export "samsung_dataset_1.csv"
 ```
 write.csv(dataset1, file = "samsung_dataset_1.csv")
 ```
 
-CREATING UCI-Samsung Dataset 2
+#### CREATING UCI-Samsung Dataset 2:
 
 Aggregate data of dataset 1 to show the average of each variable for each activity and each subject
 ```
@@ -113,7 +113,7 @@ col <- names(dataset2[,3:50])
 col1 <- paste("avg",col, sep = ".")
 names(dataset2) <- c("subject","activity",col1)
 ```
-Export "Samsung_dataset_2"
+Export "samsung_dataset_2.csv"
 ```
 write.csv(dataset2,"samsung_dataset_2.csv")
 ```
