@@ -1,6 +1,4 @@
-###################################################################################
-#### NOTE: extracted UCI HAR Dataset (source data) is in the working directory ####
-###################################################################################
+########################################
 #### CREATING UCI-Samsung Dataset 1 ####
 ########################################
 ## Crate a dataset of subjects from "subjet_test" and "subject_train" datasets
